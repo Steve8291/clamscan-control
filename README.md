@@ -33,7 +33,7 @@ Edit freshclam.conf and comment out NotifyClamd and Checks:
 ```
 nano /etc/clamav/freshclam.conf
 	# NotifyClamd /etc/clamav/clamd.conf
-    	# Checks 24
+	# Checks 24
 ```
 You don't need to notify clamd since you didn't install it.
 
@@ -56,7 +56,7 @@ Run your first scan. NOTE: this is probably going to take hours to finish.
 ```
 The "&" runs the command in the background.
 
-You can check if it has finished with the jobs or top command.
+You can check if it has finished with the "jobs" or "top" command.
 
 After the first run you should see an updated value for the variable "EPOCHTIME" in clamscan.conf
 
