@@ -12,7 +12,7 @@ Additionally there is an option to set rollback time. Default is set to rollback
 Rollback will allow you to rescan older files for a little redundancy if you like. For instance, you could set it to scan all files that are 24 hours older than last scan: rollback=86400
 
 
-## DIRECTIONS
+# DIRECTIONS
 Install clamav clamav-base clamav-freshclam
   apt install clamav
 Do not insatll the daemons: clamdscan clamav-daemon
@@ -34,7 +34,11 @@ Run freshclam to see if it is working
 freshclam
 ```
 Download both the clamscan.sh and clamscan.conf files from this git
-You can locate these anywhere you like but should probably set permissions to 700 for both.
+You can locate these anywhere you like but you need to fix their permissions:
+```
+chmod 700 clamscan.sh
+chmod 600 clamscan.conf
+```
 The config file is well commented. Add the directories you wish to scan to it.
 Run your first scan. NOTE: this is probably going to take hours to finish.
 ```
