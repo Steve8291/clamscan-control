@@ -21,7 +21,9 @@ Install clamav clamav-base clamav-freshclam
 apt install clamav
 ```
 Do not insatll the daemons: clamdscan clamav-daemon
+
 Disable the freshclam daemon from running at startup (optional).
+
 I don't see any sense in updating virus defs every min when you don't scan that often.
 ```
 /etc/init.d/clamav-freshclam stop
@@ -34,28 +36,33 @@ nano /etc/clamav/freshclam.conf
     	# Checks 24
 ```
 You don't need to notify clamd since you didn't install it.
+
 Run freshclam to see if it is working
 ```
 freshclam
 ```
 Download both the clamscan.sh and clamscan.conf files from this git
+
 You can locate these anywhere you like but you need to fix their permissions:
 ```
 chmod 700 clamscan.sh
 chmod 600 clamscan.conf
 ```
 The config file is well commented. Add the directories you wish to scan to it.
+
 Run your first scan. NOTE: this is probably going to take hours to finish.
 ```
 /path/to/clamscan.sh /path/to/clamscan.conf &
 ```
 The "&" runs the command in the background.
+
 You can check if it has finished with the jobs or top command.
+
 After the first run you should see an updated value for the variable "EPOCHTIME" in clamscan.conf
+
 You can also check your clamscan.log file to see that the scans were completed.
-NOTE: Don't use the time it took for the first scan to complete for your rollback time.
-Check to see how long scans are taking after you have run a few cron jobs with the script.
-Add the following line to cron with:
+
+Setup scans with cron at whatever intervals you like:
 ```
 crontab -e
     # Update freshclam virus defs & scan sensitive areas @2:54am
