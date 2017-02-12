@@ -46,7 +46,7 @@ Run your first scan. NOTE: this is probably going to take hours to finish.
 ```
 The "&" runs the command in the background.
 You can check if it has finished with the jobs or top command.
-After the first run you should see an updated value for the variable EPOCHTIME= in clamscan.conf
+After the first run you should see an updated value for the variable EPOCHTIME   in clamscan.conf
 You can also check your clamscan.log file to see that the scans were completed.
 NOTE: Don't use the time it took for the first scan to complete for your rollback time.
 Check to see how long scans are taking after you have run a few cron jobs with the script.
