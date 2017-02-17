@@ -68,3 +68,5 @@ crontab -e
     # Update freshclam virus defs & scan sensitive areas @2:54am
     54 2 * * * /path/to/clamscan.sh /path/to/clamscan.conf
 ```
+
+NOTE: In order to have this script email you when ClamAV encounters a virus or error you will need a properly installed and configured Mail Transfer Agent like postfix. You will also want to make sure your outgoing firewall rules allow it to send mail.
